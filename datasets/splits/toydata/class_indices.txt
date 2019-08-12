@@ -1,0 +1,20 @@
+0 0001 Aci
+1 0002 Acik
+2 0003 Acik Arttirma
+3 0005 Aciklamak
+4 0006 Acil
+5 0008 Acil Servis
+6 1052 Acil Servis_2
+7 1053 Acil Servis_3
+8 0011 Ad
+9 0012 Adet
+10 1054 Adet_2
+11 1055 Adet_3
+12 0014 Adres
+13 0015 Agiz
+14 0016 Agri
+15 1056 Agri_2
+16 0017 Agrikesici
+17 1057 Agrikesici_2
+18 0018 Aile
+19 0019 Akciger
