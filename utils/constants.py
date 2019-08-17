@@ -2,8 +2,10 @@ import os
 import enum
 import torch
 
-PRINT_STEP = 5
-SPLIT_ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'datasets', 'splits')
+PRINT_STEP = 1
+EXPERIMENT_ROOT = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'experiments')
+SPLIT_ROOT = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'datasets', 'splits')
+CHECKPOINT_FORMAT = 'checkpoint_epoch{}.pth.tar'
 
 WEIGHT_INIT = {
     'xavier_normal': torch.nn.init.xavier_normal_,

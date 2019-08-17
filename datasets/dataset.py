@@ -1,13 +1,15 @@
 from torch.utils import data
-from constants import InputType, SamplingType, SplitType, SPLIT_ROOT
 from abc import abstractmethod
+from utils.constants import *
+from utils.logger import logger
+from utils.video_transforms import ClipSubtractMean
 
 import numpy as np
 import os
 import cv2 as cv
 
 
-class AbstractDataset(data.Dataset):
+class GenericDataset(data.Dataset):
 
     def __init__(self,
                  root_dir,
@@ -29,24 +31,27 @@ class AbstractDataset(data.Dataset):
         self.modality = modality
         self.sampling = sampling
         self.transform = transform
-        self.frame_height, self.frame_width = frame_size[0], frame_size[1]
+        self.frame_height, self.frame_width = int(frame_size.split('x')[0]), int(frame_size.split('x')[1]),   # h, w
         self.clip_length = clip_length
 
         self.print_summary()
         
     def print_summary(self):
-        print('Initializing dataset: {}, split {}'.format(self.dataset, self.split.value))
-        print('Dataset path: {}'.format(self.root_dir))
-        print('Number of classes: {}'.format(self.num_classes))
-        print()
-        print('Input modality: {}'.format(self.modality))
-        print('Input sampling: {}'.format(self.sampling))
-        print('Input clip length: {}'.format(self.clip_length))
-        print('Input transforms: ')
+        logger.info('Initializing dataset: {}, split {}'.format(self.dataset, self.split.value))
+        logger.info('Dataset path: {}'.format(self.root_dir))
+        logger.info('Number of classes: {}'.format(self.num_classes))
+        logger.info('')
+        logger.info('Input frame size: {}x{}'.format(self.frame_height, self.frame_width))
+        logger.info('Input modality: {}'.format(self.modality))
+        logger.info('Input sampling: {}'.format(self.sampling))
+        logger.info('Input clip length: {}'.format(self.clip_length))
+        logger.info('Input transforms: ')
         for t in self.transform.transforms:
-            print('\t' + type(t).__name__ + ': ', end='')
-            print(vars(t))
-        print('\n==========================================')
+            if isinstance(t, ClipSubtractMean):
+                logger.info('\t' + type(t).__name__ + ': True')
+            else:
+                logger.info('\t' + type(t).__name__ + ': ' + str(vars(t)))
+        logger.info('==========================================')
 
     def __len__(self) -> int:
         return len(self.videos)
@@ -71,12 +76,14 @@ class AbstractDataset(data.Dataset):
             frames = sorted([os.path.join(video_path, '{:06d}.jpg'.format(idx)) for idx in indices])
             frame_tensor = np.empty((len(frames), self.frame_height, self.frame_width, 3), dtype=np.float64)
             for idx, f in enumerate(frames):
-                frame_tensor[idx] = np.array(cv.imread(f)).astype(np.float64)
+                img = cv.imread(f)
+                # img = cv.cvtColor(img, cv.COLOR_BGR2RGB)
+                frame_tensor[idx] = np.array(img).astype(np.float64)
 
-        elif self.modality == InputType.RGB.value:
+        elif self.modality == InputType.FLOW.value:
             raise NotImplementedError
 
-        elif self.modality == InputType.RGB.value:
+        elif self.modality == InputType.DEPTH.value:
             raise NotImplementedError
 
         return frame_tensor

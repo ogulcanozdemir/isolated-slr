@@ -69,6 +69,27 @@ class ClipStandardize(object):
         return frame_tensor
 
 
+class ClipNormalize(object):
+
+    def __init__(self, clip_range=(0, 1)):
+        self.clip_range = clip_range
+
+    def __call__(self, frame_group):
+        normalized_frame_group = frame_group - frame_group.min()
+        normalized_frame_group /= frame_group.max() - frame_group.min()
+        return (self.clip_range[1] - self.clip_range[0]) * normalized_frame_group + self.clip_range[0]
+
+
+class ClipSubtractMean(object):
+
+    def __init__(self, crop_mean):
+        self.crop_mean = np.load(crop_mean)
+
+    def __call__(self, frame_group):
+        frame_group -= self.crop_mean
+        return frame_group
+
+
 class ClipToTensor(object):
 
     def __init__(self, div=True):
@@ -76,4 +97,4 @@ class ClipToTensor(object):
 
     def __call__(self, frame_group):
         frame_group = torch.from_numpy(frame_group).permute(3, 0, 1, 2)
-        return frame_group.float().div(255) if self.div else frame_group.float()
+        return frame_group.float() # .div(255) if self.div else frame_group.float()

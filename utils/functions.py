@@ -1,5 +1,9 @@
-import torch
+from utils.constants import *
+from utils.logger import logger
+
 import csv
+import cv2 as cv
+import numpy as np
 
 
 class AverageMeter(object):
@@ -22,7 +26,8 @@ class AverageMeter(object):
         self.avg = self.sum / self.count
 
     def __str__(self):
-        fmtstr = '{name} {val' + self.fmt + '} ({avg' + self.fmt + '})'
+        # fmtstr = '{name} {val' + self.fmt + '} ({avg' + self.fmt + '})'
+        fmtstr = '{name}: {avg' + self.fmt + '}'
         return fmtstr.format(**self.__dict__)
 
 
@@ -33,9 +38,10 @@ class ProgressMeter(object):
         self.prefix = prefix
 
     def display(self, batch):
-        entries = [self.prefix + self.batch_fmtstr.format(batch)]
+        # entries = [self.prefix + self.batch_fmtstr.format(batch+1)]
+        entries = [self.prefix]
         entries += [str(meter) for meter in self.meters]
-        print('\t'.join(entries), flush=True)
+        logger.info(' - '.join(entries)) #, flush=True)
 
     def _get_batch_fmtstr(self, num_batches):
         num_digits = len(str(num_batches // 1))
@@ -43,7 +49,7 @@ class ProgressMeter(object):
         return '[' + fmt + '/' + fmt.format(num_batches) + ']'
 
 
-class Logger(object):
+class CsvLogger(object):
 
     def __init__(self, path, header):
         self.log_file = open(path, 'w', newline='')
@@ -80,3 +86,11 @@ def accuracy(output, target, topk=(1,)):
             correct_k = correct[:k].view(-1).float().sum(0, keepdim=True)
             res.append(correct_k.mul_(100.0 / batch_size))
         return res
+
+
+def get_device():
+    # use gpu if available
+    device = torch.device('cuda:0' if torch.cuda.is_available() else 'cpu')
+    logger.info('Using device, {}'.format(device))
+    logger.info('==========================================')
+    return device

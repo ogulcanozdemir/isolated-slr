@@ -1,7 +1,5 @@
-from utils.experiment import Experiment
-from constants import *
+from utils.constants import *
 
-import torch
 import argparse
 
 
@@ -16,7 +14,7 @@ def parse_arguments():
     parser.add_argument('--shuffle-train',
                         action='store_true', dest='shuffle_train',
                         help='Shuffle train')
-    parser.add_argument('--models', choices=['c3d'],
+    parser.add_argument('--models', choices=['c3d', 'r3d_18', 'mc3_18', 'r2plus1d_18'],
                         action='store', nargs='+', default=[], dest='models',
                         help='List of models that will be concatenated')
     parser.add_argument('--modality', choices=[e.value for e in InputType], default=InputType.RGB.value,
@@ -28,16 +26,25 @@ def parse_arguments():
     parser.add_argument('--clip-length', default=16,
                         action='store', dest='clip_length', type=int,
                         help='Clip length')
+    # parser.add_argument('--logging',
+    #                     action='store_true', dest='logging',
+    #                     help='Enable logging')
+    parser.add_argument('--log-level', choices=['debug', 'info', 'error'], default='info',
+                        action='store', dest='log_level', type=str,
+                        help='Log level')
 
     # data augmentation parameters
     parser.add_argument('--random-crop',
                         action='store', dest='random_crop', type=int,
                         help='Random crop size')
+    parser.add_argument('--frame-size',
+                        action='store', dest='frame_size', type=str,
+                        help='Frame size')
     parser.add_argument('--horizontal-flip',
                         action='store_true', dest='horizontal_flip',
                         help='Horizontal flip')
     parser.add_argument('--normalize',
-                        action='store_true', dest='normalize',
+                        action='store', nargs=2, dest='normalize', type=int,
                         help='Input normalization')
     parser.add_argument('--standardize-mean',
                         action='store', nargs=3, dest='standardize_mean', type=float,
@@ -45,6 +52,9 @@ def parse_arguments():
     parser.add_argument('--standardize-std',
                         action='store', nargs=3, dest='standardize_std', type=float,
                         help='Subtract Std')
+    parser.add_argument('--crop-mean',
+                        action='store', dest='crop_mean', type=str,
+                        help='Crop mean file')
 
     # training parameters
     parser.add_argument('--batch-size', default=10,
@@ -102,15 +112,3 @@ def parse_arguments():
                         help='Weight initializer for layers')
 
     return parser.parse_args()
-
-
-if __name__ == '__main__':
-    params = parse_arguments()
-
-    # use gpu if available
-    device = torch.device('cuda:0' if torch.cuda.is_available() else 'cpu')
-    print('Using device, {}'.format(device))
-    print('\n==========================================')
-
-    experiment = Experiment(opts=params, device=device)
-    experiment.train_model(last_epoch=params.last_epoch, checkpoint_path=params.resume_checkpoints)

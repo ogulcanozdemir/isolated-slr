@@ -1,4 +1,6 @@
-from constants import WEIGHT_INIT
+from utils.constants import WEIGHT_INIT
+from utils.logger import logger
+
 import torch
 import torch.nn as nn
 
@@ -12,10 +14,10 @@ class C3D(nn.Module):
         self.dropout_prob = dropout_prob
         self.weight_initializer = weight_initializer
 
-        print('Initializing C3D model ...')
-        print('Batch normalization (after conv): {}'.format(batch_norm))
-        print('Dropout [fc_6, fc_7]: {}'.format(dropout_prob))
-        print('Weight initializer: {}'.format(weight_initializer))
+        logger.info('Initializing C3D model ...')
+        logger.info('Batch normalization (after conv): {}'.format(batch_norm))
+        logger.info('Dropout [fc_6, fc_7]: {}'.format(dropout_prob))
+        logger.info('Weight initializer: {}'.format(weight_initializer))
 
         self.conv_1a = nn.Conv3d(3, 64, kernel_size=(3, 3, 3), padding=(1, 1, 1))
         self.pool_1 = nn.MaxPool3d(kernel_size=(1, 2, 2), stride=(1, 2, 2))
@@ -39,7 +41,7 @@ class C3D(nn.Module):
         self.fc_7 = nn.Linear(4096, 4096)
         self.fc_8 = nn.Linear(4096, num_classes)
 
-        if self.batch_norm is not None:
+        if self.batch_norm:
             self.conv_bn_1a = nn.BatchNorm3d(64)
             self.conv_bn_2a = nn.BatchNorm3d(128)
             self.conv_bn_3a = nn.BatchNorm3d(256)
@@ -123,7 +125,7 @@ class C3D(nn.Module):
         return x
 
     def init_weights(self):
-        print('Initializing weights using {} ...'.format(self.weight_initializer))
+        logger.info('Initializing weights using {} ...'.format(self.weight_initializer))
 
         weight_init_fun = WEIGHT_INIT[self.weight_initializer]
 
@@ -144,35 +146,35 @@ class C3D(nn.Module):
 
         layer_map = {
                      # Conv1
-                     "features.0.weight": "conv1.weight",
-                     "features.0.bias": "conv1.bias",
+                     "conv1.weight": "conv_1a.weight",
+                     "conv1.bias": "conv_1a.bias",
                      # Conv2
-                     "features.3.weight": "conv2.weight",
-                     "features.3.bias": "conv2.bias",
+                     "conv2a.weight": "conv_2a.weight",
+                     "conv2a.bias": "conv_2a.bias",
                      # Conv3a
-                     "features.6.weight": "conv3a.weight",
-                     "features.6.bias": "conv3a.bias",
+                     "conv3a.weight": "conv_3a.weight",
+                     "conv3a.bias": "conv_3a.bias",
                      # Conv3b
-                     "features.8.weight": "conv3b.weight",
-                     "features.8.bias": "conv3b.bias",
+                     "conv3b.weight": "conv_3b.weight",
+                     "conv3b.bias": "conv_3b.bias",
                      # Conv4a
-                     "features.11.weight": "conv4a.weight",
-                     "features.11.bias": "conv4a.bias",
+                     "conv4a.weight": "conv_4a.weight",
+                     "conv4a.bias": "conv_4a.bias",
                      # Conv4b
-                     "features.13.weight": "conv4b.weight",
-                     "features.13.bias": "conv4b.bias",
+                     "conv4b.weight": "conv_4b.weight",
+                     "conv4b.bias": "conv_4b.bias",
                      # Conv5a
-                     "features.16.weight": "conv5a.weight",
-                     "features.16.bias": "conv5a.bias",
+                     "conv5a.weight": "conv_5a.weight",
+                     "conv5a.bias": "conv_5a.bias",
                      # Conv5b
-                     "features.18.weight": "conv5b.weight",
-                     "features.18.bias": "conv5b.bias",
+                     "conv5b.weight": "conv_5b.weight",
+                     "conv5b.bias": "conv_5b.bias",
                      # fc6
-                     "classifier.0.weight": "fc6.weight",
-                     "classifier.0.bias": "fc6.bias",
-                     # fc7
-                     "classifier.3.weight": "fc7.weight",
-                     "classifier.3.bias": "fc7.bias",
+                     # "fc6.weight": "fc_6.weight",
+                     # "fc6.bias": "fc_6.bias",
+                     # # fc7
+                     # "fc7.weight": "fc_7.weight",
+                     # "fc7.bias": "fc_7.bias",
                      }
 
         p_dict = torch.load(weights)
@@ -181,7 +183,8 @@ class C3D(nn.Module):
             if name not in layer_map:
                 continue
             s_dict[layer_map[name]] = p_dict[name]
-        self.load_state_dict(s_dict, strict=False)
+        self.load_state_dict(s_dict, strict=True)
+        # self.load_state_dict(torch.load(weights))
 
     # def get_1x_lr_params(self):
     #     b = [self.conv_1a, self.conv_2a, self.conv_3a, self.conv_3b, self.conv_4a, self.conv_4b,

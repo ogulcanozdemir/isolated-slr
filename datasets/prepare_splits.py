@@ -13,8 +13,8 @@ def prepare_toydata(csv_data_file, csv_class_file, split_path, test_user):
         for idx, (class_id, class_name) in enumerate(class_csv_filtered.values):
             f.write(str(idx) + ' ' + class_id + ' ' + class_name + '\n')
             label2idx[class_id] = idx
-
     # prepare train and test splits
+
     data_csv = pd.read_csv(csv_data_file, delimiter=',', dtype=str)
     print(data_csv)
 
@@ -31,6 +31,8 @@ def prepare_toydata(csv_data_file, csv_class_file, split_path, test_user):
 
 if __name__ == '__main__':
     # data_path = 'D:\\Databases\\BosphorusSignV2\\Toydata\\frames_centered_360x360_180x0'
+    # csv_data_path = 'D:\\Databases\\BosphorusSignV2\\Toydata\\BosphorusSignV2_Toydata.csv'
+    # csv_class_path = 'D:\\Databases\\BosphorusSignV2\\Toydata\\BosphorusSignV2_Toydata_classindices.csv'
     csv_data_path = '/dark/Databases/BosphorusSignV2_final/BosphorusSignV2.csv'
     csv_class_path = '/dark/Databases/BosphorusSignV2_final/BosphorusSignV2_classindices.csv'
 
