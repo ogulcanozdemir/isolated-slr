@@ -22,7 +22,7 @@
                                                                 --standardize-std 0.22803 0.22145 0.216989 \
                                                                 --models=mc3_18 \
                                                                 --modality=rgb \
-                                                                --sampling=random \
+                                                                --sampling=equidistant \
                                                                 --clip-length=16 \
                                                                 --log-level=info \
                                                                 --batch-size=32 \

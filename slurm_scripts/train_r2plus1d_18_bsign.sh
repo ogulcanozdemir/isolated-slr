@@ -22,10 +22,10 @@
                                                                 --standardize-std 0.22803 0.22145 0.216989 \
                                                                 --models=r2plus1d_18 \
                                                                 --modality=rgb \
-                                                                --sampling=random \
+                                                                --sampling=equidistant \
                                                                 --clip-length=16 \
                                                                 --log-level=info \
-                                                                --batch-size=32 \
+                                                                --batch-size=24 \
                                                                 --num-workers=4 \
                                                                 --criterion=cross_entropy \
                                                                 --optimizer=adam \

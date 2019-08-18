@@ -22,10 +22,10 @@
                                                                 --standardize-std 0.22803 0.22145 0.216989 \
                                                                 --models=r3d_18 \
                                                                 --modality=rgb \
-                                                                --sampling=equidistant \
+                                                                --sampling=random \
                                                                 --clip-length=16 \
                                                                 --log-level=info \
-                                                                --batch-size=64 \
+                                                                --batch-size=32 \
                                                                 --num-workers=4 \
                                                                 --criterion=cross_entropy \
                                                                 --optimizer=adam \
