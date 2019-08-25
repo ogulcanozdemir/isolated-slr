@@ -21,7 +21,8 @@ class Experiment:
     experiment_id = None
     experiment_path = None
     checkpoints_save_path = None
-    summary_writer = None
+    summary_writer_train = None
+    summary_writer_validation = None
     train_epoch_logger = None
     train_batch_logger = None
     validation_logger = None
@@ -71,7 +72,8 @@ class Experiment:
         os.makedirs(self.checkpoints_save_path)
 
     def initialize_loggers(self):
-        self.summary_writer = SummaryWriter(os.path.join(self.experiment_path, 'logs'))
+        self.summary_writer_train = SummaryWriter(os.path.join(self.experiment_path, 'logs', 'train'))
+        self.summary_writer_validation = SummaryWriter(os.path.join(self.experiment_path, 'logs', 'validation'))
         self.train_epoch_logger = CsvLogger(os.path.join(self.experiment_path, 'train_epoch.log'),
                                             ['epoch', 'tra_loss', 'tra_acc_top1', 'tra_acc_top5', 'lr'])
         # self.train_batch_logger = CsvLogger(os.path.join(self.experiment_path, 'train_batch.log'),
@@ -99,7 +101,7 @@ class Experiment:
             logger.info('Loaded checkpoint: {}, epoch #{}'.format(checkpoint_path, last_epoch))
         else:
             last_epoch = 1
-            if self.opts.pretrained_weights:
+            if self.opts.pretrained and self.opts.pretrained_weights:
                 logger.info('Training from pretrained weights of {} model.'.format(self.model.__class__.__name__))
                 self.model.load_weights(self.opts.pretrained_weights)
                 logger.info('Loaded weights: {}'.format(self.opts.pretrained_weights))
@@ -190,34 +192,46 @@ class Experiment:
                              weight_initializer=self.opts.weight_initializer)
 
         elif self.opts.models[0] == 'r3d_18':
-            self.model = r3d_18(pretrained=True)
+            self.model = r3d_18(pretrained=self.opts.pretrained)
             self.model.fc = nn.Linear(512, self.dataloaders[SplitType.TRAIN].dataset.num_classes, bias=True)
             torch.nn.init.xavier_normal_(self.model.fc.weight)
             self.model.fc.bias.data.fill_(1)
 
         elif self.opts.models[0] == 'mc3_18':
-            self.model = mc3_18(pretrained=True)
+            self.model = mc3_18(pretrained=self.opts.pretrained)
             self.model.fc = nn.Linear(512, self.dataloaders[SplitType.TRAIN].dataset.num_classes, bias=True)
             torch.nn.init.xavier_normal_(self.model.fc.weight)
             self.model.fc.bias.data.fill_(1)
 
         elif self.opts.models[0] == 'r2plus1d_18':
-            self.model = r2plus1d_18(pretrained=True)
+            self.model = r2plus1d_18(pretrained=self.opts.pretrained)
             self.model.fc = nn.Linear(512, self.dataloaders[SplitType.TRAIN].dataset.num_classes, bias=True)
             torch.nn.init.xavier_normal_(self.model.fc.weight)
             self.model.fc.bias.data.fill_(1)
 
-        for name, child in self.model.named_children():
-            if name in ['fc']:
-                logger.info(name + ' is unfrozen')
+        if len(self.opts.layers) > 0 and self.opts.pretrained:
+            logger.info('Finetuning layers: {}'.format(self.opts.layers))
+            for name, child in self.model.named_children():
+                if name in self.opts.layers:
+                    # logger.info(name + ' is unfrozen')
+                    for param in child.parameters():
+                        param.requires_grad = True
+                else:
+                    # logger.info(name + ' is frozen')
+                    for param in child.parameters():
+                        param.requires_grad = False
+        elif self.opts.pretrained:
+            logger.info('Finetuning all layers.')
+            for name, child in self.model.named_children():
                 for param in child.parameters():
-                    param.required_grad = True
-            else:
-                logger.info(name + ' is frozen')
+                    param.requires_grad = True
+        else:
+            logger.info('Training all layers from scratch.')
+            for name, child in self.model.named_children():
                 for param in child.parameters():
-                    param.required_grad = False
+                    param.requires_grad = True
 
-        logger.info('Total number of parameters: %.2fM' % (sum(p.numel() for p in self.model.parameters()) / 1000000.0))
+        logger.info('Total number of parameters: %.2fM' % (sum(p.numel() for p in self.model.parameters() if p.requires_grad) / 1000000.0))
         logger.info('==========================================')
 
     def initialize_criterion(self):
@@ -329,9 +343,9 @@ class Experiment:
                 progress.display(epoch)
 
             if phase == SplitType.TRAIN:
-                self.summary_writer.add_scalar('data/tra_loss', running_loss.avg, epoch)
-                self.summary_writer.add_scalar('data/tra_acc1', acc_top1.avg.item(), epoch)
-                self.summary_writer.add_scalar('data/tra_acc5', acc_top5.avg.item(), epoch)
+                self.summary_writer_train.add_scalar('loss', running_loss.avg, epoch)
+                self.summary_writer_train.add_scalar('accuracy', acc_top1.avg.item(), epoch)
+                self.summary_writer_train.add_scalar('accuracy_top5', acc_top5.avg.item(), epoch)
 
                 epoch_logger.log({
                     'epoch': epoch,
@@ -341,9 +355,9 @@ class Experiment:
                     'lr': self.optimizer.param_groups[0]['lr']
                 })
             else:
-                self.summary_writer.add_scalar('data/val_loss', running_loss.avg, epoch)
-                self.summary_writer.add_scalar('data/val_acc1', acc_top1.avg.item(), epoch)
-                self.summary_writer.add_scalar('data/val_acc5', acc_top5.avg.item(), epoch)
+                self.summary_writer_validation.add_scalar('loss', running_loss.avg, epoch)
+                self.summary_writer_validation.add_scalar('accuracy', acc_top1.avg.item(), epoch)
+                self.summary_writer_validation.add_scalar('accuracy_top5', acc_top5.avg.item(), epoch)
 
                 validation_logger.log({
                     'epoch': epoch,
