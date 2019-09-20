@@ -2,6 +2,7 @@ import numpy as np
 import random
 import numbers
 import torch
+import cv2
 
 
 class Compose(object):
@@ -14,6 +15,17 @@ class Compose(object):
         for t in self.transforms:
             frame_group = t(frame_group)
         return frame_group
+
+
+class ClipResize(object):
+
+    def __init__(self, size=112):
+        if isinstance(size, numbers.Number):
+            self.size = (size, size)
+
+    def __call__(self, frame_group):
+        resized_frames = [cv2.resize(f, self.size, interpolation=cv2.INTER_CUBIC) for f in frame_group]
+        return resized_frames
 
 
 class ClipRandomCrop(object):

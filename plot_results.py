@@ -5,7 +5,7 @@ import os
 import matplotlib.pyplot as plt
 import numpy as np
 
-experiment_folder = '/raid/users/oozdemir/code/untitled-slr-project/experiments/experiment_24.08.2019-19.08.09_bsign_r3d_18_rgb_equidistant_clip16_batch32_adam_cross_entropy_lr0.001'
+experiment_folder = '/raid/users/oozdemir/code/untitled-slr-project/experiments/layer_experiments/experiment_31.08.2019-14.04.22_bsign_r2plus1d_18_rgb_equidistant_clip16_batch24_adam_cross_entropy_lr0.001/'
 
 train_epoch_log = pd.read_csv(os.path.join(experiment_folder, 'train_epoch.log'), sep='\t')
 validation_log = pd.read_csv(os.path.join(experiment_folder, 'validation.log'), sep='\t')

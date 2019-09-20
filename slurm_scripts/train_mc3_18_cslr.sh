@@ -1,6 +1,6 @@
 #!/bin/bash
 #
-#SBATCH --job-name=user7_mc3_18_bsign
+#SBATCH --job-name=cslr_mc3_18
 #SBATCH --ntasks=1
 #SBATCH --gres=gpu:1
 #SBATCH --cpus-per-task=4
@@ -12,8 +12,8 @@
 #SBATCH -e /raid/users/oozdemir/code/untitled-slr-project/slurm_scripts/outputs/mc3_18-err-%j.err  # send stderr to errfile
 
 /raid/users/oozdemir/anaconda3/envs/pytorch/bin/python3.6 /raid/users/oozdemir/code/untitled-slr-project/train.py \
-                                                                --dataset=bsign7 \
-                                                                --dataset-dir=/dark/Databases/BosphorusSignV2_final/frames_112x112/ \
+                                                                --dataset=cslr \
+                                                                --dataset-dir=/dark/Databases/CSLR/isolated_slr500_rgb \
                                                                 --shuffle-train \
                                                                 --frame-size=112x112 \
                                                                 --horizontal-flip \
@@ -34,3 +34,6 @@
                                                                 --weight-initializer=xavier_normal \
                                                                 --pretrained \
                                                                 --layers layer2 layer3 layer4 fc
+
+
+# changed frame start to 1

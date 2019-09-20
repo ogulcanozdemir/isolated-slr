@@ -22,7 +22,7 @@
                                                                 --standardize-std 0.22803 0.22145 0.216989 \
                                                                 --models=r3d_18 \
                                                                 --modality=rgb \
-                                                                --sampling=random \
+                                                                --sampling=equidistant \
                                                                 --clip-length=16 \
                                                                 --log-level=info \
                                                                 --batch-size=32 \
@@ -30,5 +30,7 @@
                                                                 --criterion=cross_entropy \
                                                                 --optimizer=adam \
                                                                 --learning-rate=1e-3 \
-                                                                --epoch=100 \
+                                                                --epoch=500 \
                                                                 --weight-initializer=xavier_normal \
+                                                                --pretrained \
+                                                                --layers layer2 layer3 layer4 fc

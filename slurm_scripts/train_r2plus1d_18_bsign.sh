@@ -5,6 +5,7 @@
 #SBATCH --gres=gpu:1
 #SBATCH --cpus-per-task=4
 #SBATCH --mem=5000
+#SBATCH --nice=100
 #SBATCH --partition=main
 #SBATCH --mail-type=END
 #SBATCH --mail-user ogulcan.ozdemir@yahoo.com
@@ -30,5 +31,7 @@
                                                                 --criterion=cross_entropy \
                                                                 --optimizer=adam \
                                                                 --learning-rate=1e-3 \
-                                                                --epoch=100 \
+                                                                --epoch=300 \
                                                                 --weight-initializer=xavier_normal \
+                                                                --pretrained \
+                                                                --layers layer2 layer3 layer4 fc

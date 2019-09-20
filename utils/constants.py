@@ -42,6 +42,7 @@ class InputType(enum.Enum):
     FLOW = 'flow'
     DEPTH = 'depth'
     SKELETON = 'skeleton'
+    FEATURE_SEQ = 'feature_seq'
 
 
 class SamplingType(enum.Enum):
@@ -49,3 +50,5 @@ class SamplingType(enum.Enum):
     RANDOM = 'random'
     EQUIDISTANT = 'equidistant'
     KEYFRAME = 'keyframe'
+    FEATURE16_NONOVERLAP = 'feature16_nonoverlap'
+    FEATURE16_OVERLAP = 'feature16_overlap'

@@ -1,0 +1,744 @@
+0 0001 Aci
+1 0002 Acik
+2 0003 Acik Arttirma
+3 0005 Aciklamak
+4 0006 Acil
+5 0008 Acil Servis
+6 0011 Ad
+7 0012 Adet
+8 0014 Adres
+9 0015 Agiz
+10 0016 Agri
+11 0017 Agrikesici
+12 0018 Aile
+13 0019 Akciger
+14 0020 Akil
+15 0021 Akraba
+16 0022 Aksam
+17 0023 Aksam Yemegi
+18 0025 Alci
+19 0026 Alerji
+20 0027 Alim
+21 0028 Alin
+22 0029 Alisveris
+23 0030 Alkol
+24 0031 Alkolik
+25 0032 Almak
+26 0033 Altin
+27 0034 Ambulans
+28 0035 Ameliyat
+29 0036 Anestezi
+30 0037 Anne
+31 0038 Antibiyotik
+32 0039 Araba
+33 0040 Aramak
+34 0041 Aramak (Telefon)
+35 0042 Arkadas
+36 0043 Arsa
+37 0044 Asi_Igne
+38 0045 Aspirin
+39 0046 Astim
+40 0047 Ates
+41 0048 Ates Dusurucu
+42 0050 Atlamak
+43 0051 Ay
+44 0052 Ayaga Kalkmak
+45 0053 Ayak
+46 0054 Aylik
+47 0055 Ayni
+48 0056 Az
+49 0057 Baba_Erkek
+50 0058 Bacak
+51 0059 Bagimli
+52 0060 Bagirmak
+53 0061 Bagirsak
+54 0062 Bakim
+55 0063 Bakmak
+56 0064 Balgam
+57 0065 Bandaj
+58 0066 Banka
+59 0067 Bankamatik
+60 0068 Bas
+61 0069 Bas Agrisi
+62 0071 Bas Donmesi
+63 0072 Baski
+64 0073 Basvuru
+65 0074 Bayilmak
+66 0076 Bebek
+67 0077 Bedava
+68 0078 Bedel
+69 0079 Begenmek
+70 0080 Bekar
+71 0081 Bekleme Salonu
+72 0083 Beklemek
+73 0084 Bel
+74 0090 Benzemek
+75 0091 Beyin
+76 0092 Beze
+77 0093 Bikmak
+78 0094 Bilek
+79 0095 Bilgi
+80 0097 Bilinci Yerinde
+81 0098 Bilincini Kaybetmis
+82 0099 Bilmek
+83 0100 Bir Hafta Once
+84 0102 Bir Sey Degil
+85 0106 Biraz
+86 0107 Birikim
+87 0108 Bitmek
+88 0109 Bobrek
+89 0110 Bogaz
+90 0111 Bogaz Sismesi
+91 0113 Bogulmak
+92 0114 Borc
+93 0115 Bordro
+94 0116 Borsa
+95 0117 Bosanmak
+96 0118 Boy
+97 0119 Boyun
+98 0120 Bozdurmak
+99 0121 Brut
+100 0122 Bulanti
+101 0123 Bulmak
+102 0124 Burkma
+103 0126 Burun
+104 0127 Burun Kanamasi
+105 0128 Butce
+106 0129 Buyuk Abdest
+107 0130 Cagirmak
+108 0131 Calismak
+109 0132 Calmak(Hirsizlik)
+110 0133 Calmak(Muzik)
+111 0134 Carpismak
+112 0135 Catlak
+113 0136 Cek
+114 0137 Cekmek
+115 0138 Cep
+116 0139 Cep Telefonu
+117 0141 Cerrah
+118 0142 Cevirmek
+119 0143 Ceyrek_Yarim
+120 0144 Cikik
+121 0145 Cocuk
+122 0146 Cocuklar
+123 0147 Cok
+124 0149 Cokmek
+125 0150 Damar
+126 0151 Damga Vergisi
+127 0153 Danisma
+128 0154 Danismak
+129 0155 Deger
+130 0156 Dekont
+131 0157 Depresyon
+132 0158 Derece
+133 0159 Deri
+134 0160 Dermatolog
+135 0161 Deste
+136 0162 Devir
+137 0163 Devlet
+138 0164 Dikis
+139 0166 Dinlemek
+140 0167 Dis
+141 0168 Dis Agrisi
+142 0169 Dis Cektirmek
+143 0170 Dis Teli
+144 0171 Disarida
+145 0172 Disci
+146 0173 Diz
+147 0174 Dogum
+148 0175 Dogum Sancisi
+149 0176 Dokmek
+150 0177 Doktor
+151 0178 Dokunma
+152 0179 Dokunmak
+153 0180 Dolar
+154 0181 Dolasim
+155 0182 Donmak
+156 0183 Dosya Masrafi
+157 0185 Doviz
+158 0186 Dovmek
+159 0187 Dovusmek
+160 0188 Durmak
+161 0189 Durust
+162 0190 Dusmek
+163 0191 Dusuk Ates
+164 0192 Dusuk Cocuk
+165 0193 Duygusal
+166 0194 Duyma
+167 0195 Duzenli
+168 0196 E-posta
+169 0197 Eczane
+170 0198 Eklem
+171 0199 El
+172 0200 Elektronik
+173 0201 Emar
+174 0202 Emeklemek
+175 0203 Emekli
+176 0204 Emekli Olmak
+177 0205 Emir
+178 0206 Emzik
+179 0207 Emzirmek
+180 0208 Enfeksiyon
+181 0209 Enflasyon
+182 0210 Engel
+183 0211 Engelli
+184 0212 Enjeksiyon
+185 0215 Erken
+186 0216 Erken Dogum
+187 0217 Euro
+188 0218 Ev
+189 0219 Ev Adresi
+190 0223 Evli
+191 0224 Faiz
+192 0225 Farkli
+193 0226 Fatura
+194 0227 Fatura Odeme
+195 0229 Felc
+196 0230 Fitil
+197 0231 Fiyat_Para
+198 0232 Fiziksel
+199 0233 Fon
+200 0234 Fotokopi
+201 0235 Gecikmek_Gec
+202 0237 Gelir
+203 0238 Gelmek
+204 0239 Getiri
+205 0240 Getirmek
+206 0241 Gider
+207 0242 Gitmek
+208 0243 Giyinmek
+209 0244 Giysi
+210 0245 Gizlemek
+211 0246 Gogus
+212 0248 Gondermek
+213 0249 Gormek
+214 0251 Gostermek
+215 0252 Govde
+216 0253 Goz
+217 0254 Gozluk
+218 0255 Grip
+219 0256 Gunluk
+220 0257 Guvenlik Gorevlisi
+221 0259 Haciz
+222 0260 Hafiza
+223 0261 Hafiza Kaybi
+224 0262 Hafta
+225 0263 Haftalik
+226 0264 Halsizlik
+227 0265 Hamile
+228 0266 Hap
+229 0267 Hareket
+230 0268 Hasta
+231 0270 Hasta Bakici
+232 0271 Hastalik
+233 0272 Hastane
+234 0274 Hatirlamak
+235 0275 Hatirlatma
+236 0276 Havale
+237 0279 Hemen
+238 0280 Hemsire
+239 0281 Hesap
+240 0282 Hesap No
+241 0284 Hisse
+242 0285 Hissetmek
+243 0286 Hizmet
+244 0287 Icerde
+245 0288 Icmek
+246 0289 Icra
+247 0291 Iflas
+248 0292 Igne
+249 0293 Ihtiyac
+250 0294 Ikametgah
+251 0295 Ilac
+252 0297 Ilave
+253 0298 Ilik
+254 0299 Ilkyardim
+255 0300 Iltihap
+256 0301 Imza
+257 0302 Indirim
+258 0303 Insallah
+259 0304 Internet
+260 0305 Is
+261 0306 Is Adresi
+262 0308 Isaret
+263 0309 Ishal
+264 0312 Isirmak
+265 0313 Isitmak
+266 0314 Isitmek
+267 0315 Isletme
+268 0316 Isteksiz
+269 0317 Istemek
+270 0318 Istemsiz
+271 0319 Istirahat
+272 0320 Iyi
+273 0321 Iyilesme
+274 0322 Jel
+275 0323 Jelatin
+276 0324 Kabakulak
+277 0325 Kabiz
+278 0326 Kacmak
+279 0327 Kadin_Kiz
+280 0331 Kahvalti
+281 0328 Kafa
+282 0329 Kafeterya
+283 0330 Kagit
+284 0332 Kalem
+285 0337 Kamu
+286 0334 Kalp
+287 0336 Kalp Krizi
+288 0346 Kanuni
+289 0338 Kan
+290 0340 Kan Almak
+291 0341 Kan Gurubu
+292 0342 Kan Kaybi
+293 0343 Kan Tahlili
+294 0344 Kanama
+295 0345 Kanser_Mikrop
+296 0348 Kapatmak
+297 0357 Kasinmak
+298 0349 Kapora
+299 0350 Kar
+300 0351 Karaciger
+301 0352 Karin
+302 0354 Kart
+303 0355 Kasa
+304 0356 Kase
+305 0360 Katlamak
+306 0358 Kasko
+307 0359 Katilim
+308 0363 Kazanmak
+309 0361 Kayit
+310 0367 Kesmek
+311 0364 Kefil
+312 0365 Kemik
+313 0366 Kesik
+314 0369 Kilo Almak
+315 0368 Kilo
+316 0370 Kilo Vermek
+317 0371 Kimlik
+318 0381 Konsantre Olmak
+319 0372 Kimlik No
+320 0374 Kirik
+321 0376 Kizamik
+322 0377 Kizariklik
+323 0378 Koklama
+324 0379 Kol
+325 0380 Koltuk Degnegi
+326 0384 Kosmak
+327 0382 Kontrol
+328 0383 Korku
+329 0385 Kotu
+330 0386 Kramp
+331 0390 Krem
+332 0387 Kredi
+333 0388 Kredi Karti
+334 0391 Kriz
+335 0392 Kucuk Abdest
+336 0394 Kulak Agrisi
+337 0396 Kusmak
+338 0395 Kur
+339 0409 Masallah
+340 0397 Kuvoz
+341 0398 Laboratuvar
+342 0399 Lavabo
+343 0400 Lens
+344 0401 Limit
+345 0402 Lira
+346 0405 Maas
+347 0406 Maas Bordrosu
+348 0425 Nasilsin
+349 0410 Masraf
+350 0411 Meme
+351 0412 Merhem
+352 0413 Mide
+353 0414 Migren
+354 0416 Miras
+355 0417 Morluk
+356 0418 Muayene
+357 0420 Musteri
+358 0421 Mutsuz
+359 0422 Nabiz
+360 0423 Nakit
+361 0437 Numara
+362 0427 Nefes
+363 0429 Nefes Alma
+364 0430 Nefes Tutma
+365 0431 Nefes Verme
+366 0432 Nezle
+367 0433 Nobetci
+368 0434 Nufus
+369 0435 Nufus Cuzdani
+370 0442 Odemek
+371 0438 Obezite
+372 0439 Obur
+373 0440 Oda
+374 0441 Odeme
+375 0443 Oglan_Erkek
+376 0444 Oglen
+377 0445 Oglen Yemegi
+378 0447 Ogrenmek
+379 0448 Ogretmek
+380 0449 Ogun
+381 0451 Oksuruk
+382 0452 Okul Adresi
+383 0454 Olmak
+384 0455 Olmek
+385 0456 Olum
+386 0457 Omuz
+387 0458 Onay
+388 0459 Once
+389 0460 Oneri
+390 0461 Oran
+391 0462 Ordek
+392 0463 Ortak
+393 0465 Ortmek
+394 0466 Otomatik
+395 0467 Oturak
+396 0468 Oturmak
+397 0469 Ozel
+398 0470 Ozel Hastane
+399 0471 Ozel Saglik Sigortasi
+400 0472 Ozel Sigorta
+401 0473 Ozur
+402 0474 Pansuman
+403 0476 Para Cekme
+404 0477 Para Yatirma
+405 0480 Parmak
+406 0481 Piyasa
+407 0482 Problem
+408 0483 Profesor
+409 0484 Protein
+410 0485 Psikoloji
+411 0486 Radyoloji
+412 0487 Rahat
+413 0488 Randevu
+414 0489 Rapor
+415 0490 Recete
+416 0491 Reflu
+417 0492 Regl
+418 0493 Risk
+419 0494 Rontgen
+420 0495 Ruh Hastaligi
+421 0496 Ruh Sagligi
+422 0497 Saat
+423 0498 Sabah
+424 0499 Sagir
+425 0500 Saglik
+426 0501 Sakinlesme
+427 0502 Saklamak
+428 0503 Sanci
+429 0504 Sara
+430 0505 Sargi
+431 0506 Satim
+432 0507 Satmak
+433 0508 Sedye
+434 0509 Seker
+435 0510 Seker Hastasi
+436 0511 Senet
+437 0512 Senelik (Yillik)
+438 0514 Sert
+439 0515 Seyahat
+440 0516 Sezaryen
+441 0517 Sicak
+442 0518 Sigara
+443 0519 Sigara Icmek
+444 0520 Sigorta
+445 0522 Sikayet
+446 0523 Sikinti
+447 0524 Simdi
+448 0525 Sinirlilik
+449 0526 Sira
+450 0527 Sira Numarasi
+451 0529 Siramatik
+452 0530 Siringa
+453 0531 Sirket
+454 0532 Sirt
+455 0534 Sis
+456 0538 Sizlama
+457 0540 Soguk Alginligi
+458 0541 Solunum
+459 0543 Sonra
+460 0544 Sonuc
+461 0545 Sormak
+462 0546 Soru
+463 0547 Soyad
+464 0548 Soylemek
+465 0549 Soyunmak
+466 0553 Sukretmek
+467 0550 Spor
+468 0551 Stres
+469 0552 Su Toplamis
+470 0554 Surat
+471 0555 Surup
+472 0556 Susamak
+473 0557 Susmak
+474 0564 Tanmak
+475 0558 Taban
+476 0559 Taburcu
+477 0560 Tatma
+478 0561 Tahlil
+479 0562 Taksit
+480 0563 Tam
+481 0573 Tekrar
+482 0565 Tansiyon
+483 0566 Tapu
+484 0567 Tarih
+485 0568 Tasarruf
+486 0569 Tavan
+487 0570 Tavsiye
+488 0571 Tecavuz
+489 0572 Tekerlekli Sandalye
+490 0574 Telefon
+491 0578 Tesekkur
+492 0575 Temizlik
+493 0576 Terapi
+494 0577 Termometre
+495 0589 Unutmak
+496 0580 Test
+497 0581 Transfer
+498 0582 Tuvalet
+499 0584 Uc Aylik
+500 0585 Ucret
+501 0587 Ucuk
+502 0588 Ultrason
+503 0590 Usumek
+504 0603 Var
+505 0591 Uykulu
+506 0592 Uykusuz
+507 0594 Uyumak
+508 0595 Uyusturucu
+509 0596 Uyuyamamak
+510 0597 Uzgun
+511 0598 Uzman
+512 0599 Uzulmek
+513 0600 Vade
+514 0601 Vadeli
+515 0602 Vadesiz
+516 0607 Vermek
+517 0604 Vasi Tayini(Vesayet)
+518 0606 Vergi
+519 0614 Yakalamak
+520 0608 Vezne
+521 0609 Viral
+522 0610 Virus
+523 0611 Vitamin
+524 0612 Vucut
+525 0613 Yag
+526 0617 Yakmak
+527 0615 Yakin
+528 0616 Yakin(Akraba)
+529 0618 Yanit
+530 0619 Yapmak
+531 0620 Yara
+532 0621 Yarabandi
+533 0622 Yaralamak
+534 0623 Yardim
+535 0625 Yil_Yas
+536 0624 Yarim
+537 0634 Yazmak
+538 0626 Yasam
+539 0627 Yasam Kalitesi
+540 0628 Yatak
+541 0629 Yatak Istirahati
+542 0630 Yatirim Fonu
+543 0632 Yatirmak
+544 0633 Yatmak
+545 0635 Yemek
+546 0642 Yok
+547 0637 Yetersiz
+548 0639 Yilan
+549 0640 Yogun
+550 0641 Yogun Bakim
+551 0647 Yutmak
+552 0643 Yol
+553 0644 Yorgunluk
+554 0645 Yuksek
+555 0646 Yumusak
+556 0650 Zannetmek
+557 0649 Zaman
+558 1000 Bagirmak_2
+559 0651 Zaturree
+560 0652 Zehir
+561 1001 Bakmak_2
+562 1002 Benzemek_2
+563 1003 Benzemek_3
+564 1004 Bitmek_2
+565 1005 Bogulmak_2
+566 1006 Calismak_2
+567 1007 Cekmek_2
+568 1008 Cevirmek_2
+569 1009 Cok_2
+570 1010 Dinlemek_2
+571 1011 Dokunmak_2
+572 1012 Dokunmak_3
+573 1013 Dovmek_2
+574 1014 E-posta_2
+575 1015 Emzirmek_2
+576 1016 Gondermek_2
+577 1017 Insallah_2
+578 1018 Isirmak_2
+579 1019 Kahvalti_2
+580 1020 Kahvalti_3
+581 1021 Kahvalti_4
+582 1022 Kilo Vermek_2
+583 1023 Numara_2
+584 1024 Satmak_2
+585 1025 Sonra_2
+586 1026 Yapmak_2
+587 1027 Alisveris_2
+588 1184 Bankamatik_2
+589 1029 Bekleme Salonu_2
+590 1030 Bekleme Salonu_3
+591 1032 Borc_2
+592 1185 Butce_2
+593 1033 Cekmek_3
+594 1034 Cekmek_4
+595 1035 Damga Vergisi_2
+596 1036 Danisma_2
+597 1037 Doviz_2
+598 1038 Fatura Odeme_2
+599 1039 Iflas_2
+600 1040 Internet_2
+601 1041 Kapora_2
+602 1042 Kart_2
+603 1043 Kefil_2
+604 1044 Kimlik No_2
+605 1045 Kredi_2
+606 1046 Miras_2
+607 1047 Miras_3
+608 1048 Odeme_2
+609 1049 Tam_2
+610 1050 Tam_3
+611 1051 Zaman_2
+612 1052 Acil Servis_2
+613 1053 Acil Servis_3
+614 1054 Adet_2
+615 1055 Adet_3
+616 1056 Agri_2
+617 1057 Agrikesici_2
+618 1058 Alerji_2
+619 1059 Alin_2
+620 1060 Alkol_2
+621 1061 Alkol_3
+622 1062 Ambulans_2
+623 1063 Ambulans_3
+624 1064 Antibiyotik_2
+625 1065 Antibiyotik_3
+626 1066 Ates Dusurucu_2
+627 1067 Ayak_2
+628 1068 Bacak_2
+629 1069 Bagimli_2
+630 1070 Bagimli_3
+631 1071 Bandaj_2
+632 1072 Baski_2
+633 1073 Beze_2
+634 1074 Bilek_2
+635 1075 Bobrek_2
+636 1076 Buyuk Abdest_2
+637 1077 Catlak_2
+638 1078 Catlak_3
+639 1079 Dermatolog_2
+640 1080 Dermatolog_3
+641 1081 Dikis_2
+642 1082 Dis Teli_2
+643 1083 Dis Teli_3
+644 1084 Dis Teli_4
+645 1085 Dis Teli_5
+646 1086 Dis Teli_6
+647 1087 Disci_2
+648 1088 Disci_3
+649 1089 Diz_2
+650 1090 Diz_3
+651 1091 Dogum Sancisi_2
+652 1092 Dokunma_2
+653 1093 Dusuk Ates_2
+654 1094 Dusuk Cocuk_2
+655 1095 Duygusal_2
+656 1096 Eczane_2
+657 1097 Eklem_2
+658 1098 Eklem_3
+659 1099 El_2
+660 1100 El_3
+661 1101 Emar_2
+662 1102 Emar_3
+663 1103 Emar_4
+664 1104 Emzik_2
+665 1105 Emzik_3
+666 1106 Enfeksiyon_2
+667 1107 Enfeksiyon_3
+668 1108 Felc_2
+669 1109 Fitil_2
+670 1110 Fitil_3
+671 1111 Gogus_2
+672 1112 Gormek_2
+673 1113 Gormek_3
+674 1114 Govde_2
+675 1115 Grip_2
+676 1116 Hafiza_2
+677 1117 Halsizlik_2
+678 1118 Halsizlik_3
+679 1119 Hap_2
+680 1120 Hareket_2
+681 1121 Ilik_2
+682 1122 Ilkyardim_2
+683 1123 Ilkyardim_3
+684 1124 Iltihap_2
+685 1125 Iltihap_3
+686 1126 Is_2
+687 1127 Istirahat_2
+688 1128 Istirahat_3
+689 1129 Kabiz_2
+690 1130 Kabiz_3
+691 1131 Kafa_2
+692 1132 Kafeterya_2
+693 1133 Kalp_2
+694 1134 Kan_2
+695 1135 Kan Tahlili_2
+696 1136 Kanser_2
+697 1137 Kanser_3
+698 1138 Karaciger_2
+699 1139 Kemik_2
+700 1140 Kizamik_2
+701 1141 Kol_2
+702 1142 Koltuk Degnegi_2
+703 1143 Koltuk Degnegi_3
+704 1144 Koltuk Degnegi_4
+705 1145 Kramp_2
+706 1147 Kramp_3
+707 1148 Kramp_4
+708 1186 Kucuk Abdest_2
+709 1149 Kulak Agrisi_2
+710 1150 Kuvoz_2
+711 1151 Lavabo_2
+712 1152 Merhem_2
+713 1153 Migren_2
+714 1154 Muayene_2
+715 1155 Nabiz_2
+716 1156 Nabiz_3
+717 1157 Nefes_2
+718 1158 Nefes Alma_2
+719 1159 Nefes Tutma_2
+720 1160 Nefes Verme_2
+721 1161 Nobetci_2
+722 1162 Obezite_2
+723 1163 Ogun_2
+724 1164 Oksuruk_2
+725 1165 Omuz_2
+726 1166 Ordek_2
+727 1167 Ordek_3
+728 1168 Radyoloji_2
+729 1169 Regl_2
+730 1170 Rontgen_2
+731 1171 Sara_2
+732 1172 Sedye_2
+733 1173 Sizlama_2
+734 1174 Soyunmak_2
+735 1175 Temizlik_2
+736 1176 Temizlik_3
+737 1177 Termometre_2
+738 1178 Tuvalet_2
+739 1179 Ucuk_2
+740 1180 Uykulu_2
+741 1181 Uyuyamamak_2
+742 1182 Uyuyamamak_3
+743 1183 Yumusak_2
